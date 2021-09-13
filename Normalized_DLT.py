@@ -33,7 +33,7 @@ class Dlt(object):
     for point in points:
       sumOfDist += np.linalg.norm(point - average) # Frobenius norm
     
-    meanOfDist = sumOfDist / len(points) # mean distance of all key points from centroid (in one image)
+    meanOfDist = sumOfDist / len(points) # mean distance of all point correspondences from centroid (in one image)
     s = math.sqrt(2) / meanOfDist # s is scale
 
     return s
@@ -47,7 +47,7 @@ class Dlt(object):
                   [0, 0, 1]])
     return T
   
-  # normalize keypoints
+  # normalize
   def __normalize(self, points, T):
     normalizedPoints = np.zeros((len(points), 3))
     for i, point in enumerate(points):
