@@ -5,7 +5,7 @@ class Dlt(object):
 
   # constructor
   def __init__(self, orgs, corrs):
-    self.orgs = orgs      # set of point correspondences from first image [(), (), (), ...] or [[], [], []]
+    self.orgs = orgs      # set of point correspondences from first image [(), (), (), ...] or [[], [], [], ...]
     self.corrs = corrs    # set of point correspondences from second image [(), (), (), ...]
   
   # compute the centroids
