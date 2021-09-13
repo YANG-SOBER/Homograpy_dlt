@@ -15,11 +15,11 @@ class Dlt(object):
     
     for point in self.orgs:
       sumOrgs[0] += point[0] # sum of the x-coordinates of the point correspondences in the first image set
-      sumOrgs[1] += point[1] # sum of the y-coordinates of ...                   second ...
+      sumOrgs[1] += point[1] # sum of the y-coordinates of ...         
     
     for point in self.corrs:
       sumCorrs[0] += point[0] # sum of the x-coordinates of the point correspondences in the second image set
-      sumCorrs[1] += point[1] # sum of the y-coordinates of ...                   second ...
+      sumCorrs[1] += point[1] # sum of the y-coordinates of ...
 
     averageOrgs = sumOrgs / len(self.orgs)
     averageCorrs = sumCorrs / len(self.Corrs)  
@@ -81,7 +81,7 @@ class Dlt(object):
     normalizedOrgs = self.__normalize(self.orgs, T_normOrgs)
     normalizedCorrs = self.__normalize(self.corrs, T_normCorrs)
 
-    A = self.matrixA(normalizedOrgs, normalizedCorrs)
+    A = self.__matrixA(normalizedOrgs, normalizedCorrs)
 
     U, S, VT = np.linalg.svd(A)
     V = VT.T
