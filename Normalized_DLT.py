@@ -22,7 +22,7 @@ class Dlt(object):
       sumCorrs[1] += point[1] # sum of the y-coordinates of ...
 
     averageOrgs = sumOrgs / len(self.orgs)
-    averageCorrs = sumCorrs / len(self.Corrs)  
+    averageCorrs = sumCorrs / len(self.corrs)  
     
     return averageOrgs, averageCorrs
   
@@ -51,6 +51,7 @@ class Dlt(object):
   def __normalize(self, points, T):
     normalizedPoints = np.zeros((len(points), 3))
     for i, point in enumerate(points):
+      point = [point[0], point[1], 1]
       normalizedPoints[i] = T @ point
     return normalizedPoints
   
